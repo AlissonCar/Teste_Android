@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220713 19:04:19.676" rpa="false" schemaversion="3">
+<suite id="s1" name="Login" source="C:\Users\aliss\IdeaProjects\Teste_Android\Test\login.robot">
+<test id="s1-t1" name="Login" line="5">
+<kw name="Open chat21 application" library="AbrirApp">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=teste</arg>
+<arg>udid=0045520722</arg>
+<arg>appPackage=chat21.android.demo</arg>
+<arg>appActivity=chat21.android.demo.SplashActivity</arg>
+<arg>automationName=UIautomator2</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<msg timestamp="20220713 19:04:21.999" level="INFO">Could not connect to port 4723 on host localhost</msg>
+<msg timestamp="20220713 19:04:21.999" level="INFO">Could not get IP address for host: localhost</msg>
+<msg timestamp="20220713 19:04:26.086" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000017A6B3AD2D0&gt;: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente')': /wd/hub/session</msg>
+<msg timestamp="20220713 19:04:30.156" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000017A6B3AD5A0&gt;: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente')': /wd/hub/session</msg>
+<status status="PASS" starttime="20220713 19:04:19.972" endtime="20220713 19:04:52.155"/>
+</kw>
+<status status="PASS" starttime="20220713 19:04:19.971" endtime="20220713 19:04:52.155"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${LOGIN-EMAIL-FIELD}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220713 19:04:52.156" endtime="20220713 19:04:52.577"/>
+</kw>
+<kw name="Signin With User" library="android-res">
+<arg>${EMAIL}</arg>
+<arg>${USERPASSWORD}</arg>
+<kw name="Input User Email" library="android-res">
+<arg>${EMAIL}</arg>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${LOGIN-EMAIL-FIELD}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220713 19:04:52.579" endtime="20220713 19:04:52.630"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${LOGIN-EMAIL-FIELD}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220713 19:04:52.633" level="INFO">Typing text 'alissucarvalho@gmail.com' into text field 'id=chat21.android.demo:id/email'</msg>
+<status status="PASS" starttime="20220713 19:04:52.631" endtime="20220713 19:04:52.740"/>
+</kw>
+<status status="PASS" starttime="20220713 19:04:52.579" endtime="20220713 19:04:52.740"/>
+</kw>
+<kw name="Input User Password" library="android-res">
+<arg>${USERPASSWORD}</arg>
+<kw name="Input Password" library="AppiumLibrary">
+<arg>${LOGIN-PASSWORD-FIELD}</arg>
+<arg>${USERPASSWORD}</arg>
+<doc>Types the given password into text field identified by `locator`.</doc>
+<msg timestamp="20220713 19:04:52.743" level="INFO">Typing password into text field 'id=chat21.android.demo:id/password'</msg>
+<status status="PASS" starttime="20220713 19:04:52.741" endtime="20220713 19:04:53.309"/>
+</kw>
+<status status="PASS" starttime="20220713 19:04:52.740" endtime="20220713 19:04:53.309"/>
+</kw>
+<kw name="submit Login" library="android-res">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${LOGIN-SINGIN-BUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220713 19:04:53.312" level="INFO">Clicking element 'id=chat21.android.demo:id/login'.</msg>
+<status status="PASS" starttime="20220713 19:04:53.310" endtime="20220713 19:04:53.872"/>
+</kw>
+<status status="PASS" starttime="20220713 19:04:53.309" endtime="20220713 19:04:53.872"/>
+</kw>
+<kw name="Verify Login Is Successful" library="android-res">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${MAIN-HOME-TAB}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220713 19:04:53.873" endtime="20220713 19:04:57.601"/>
+</kw>
+<status status="PASS" starttime="20220713 19:04:53.872" endtime="20220713 19:04:57.601"/>
+</kw>
+<status status="PASS" starttime="20220713 19:04:52.578" endtime="20220713 19:04:57.602"/>
+</kw>
+<kw name="Logout With User" library="android-res">
+<kw name="go to profile page" library="android-res">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${MAIN-PROFILE-TAB}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220713 19:04:57.605" level="INFO">Clicking element '//android.widget.TextView[@text="PROFILE"]'.</msg>
+<status status="PASS" starttime="20220713 19:04:57.603" endtime="20220713 19:04:57.818"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${PROFILE-LOGOUT-BUTTON}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220713 19:04:57.818" endtime="20220713 19:04:58.810"/>
+</kw>
+<status status="PASS" starttime="20220713 19:04:57.602" endtime="20220713 19:04:58.810"/>
+</kw>
+<kw name="click the logout button" library="android-res">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${PROFILE-LOGOUT-BUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220713 19:04:58.814" level="INFO">Clicking element 'id=chat21.android.demo:id/logout'.</msg>
+<status status="PASS" starttime="20220713 19:04:58.811" endtime="20220713 19:04:58.892"/>
+</kw>
+<status status="PASS" starttime="20220713 19:04:58.810" endtime="20220713 19:04:58.892"/>
+</kw>
+<kw name="verify Login email field is displayed" library="android-res">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${LOGIN-EMAIL-FIELD}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220713 19:04:58.892" endtime="20220713 19:05:02.953"/>
+</kw>
+<status status="PASS" starttime="20220713 19:04:58.892" endtime="20220713 19:05:02.953"/>
+</kw>
+<status status="PASS" starttime="20220713 19:04:57.602" endtime="20220713 19:05:02.953"/>
+</kw>
+<kw name="Signin With User" library="android-res">
+<arg>${EMAIL}</arg>
+<arg>${USERPASSWORD}</arg>
+<kw name="Input User Email" library="android-res">
+<arg>${EMAIL}</arg>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${LOGIN-EMAIL-FIELD}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220713 19:05:02.957" endtime="20220713 19:05:03.932"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${LOGIN-EMAIL-FIELD}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220713 19:05:03.937" level="INFO">Typing text 'alissucarvalho@gmail.com' into text field 'id=chat21.android.demo:id/email'</msg>
+<status status="PASS" starttime="20220713 19:05:03.932" endtime="20220713 19:05:04.011"/>
+</kw>
+<status status="PASS" starttime="20220713 19:05:02.955" endtime="20220713 19:05:04.011"/>
+</kw>
+<kw name="Input User Password" library="android-res">
+<arg>${USERPASSWORD}</arg>
+<kw name="Input Password" library="AppiumLibrary">
+<arg>${LOGIN-PASSWORD-FIELD}</arg>
+<arg>${USERPASSWORD}</arg>
+<doc>Types the given password into text field identified by `locator`.</doc>
+<msg timestamp="20220713 19:05:04.014" level="INFO">Typing password into text field 'id=chat21.android.demo:id/password'</msg>
+<status status="PASS" starttime="20220713 19:05:04.011" endtime="20220713 19:05:04.588"/>
+</kw>
+<status status="PASS" starttime="20220713 19:05:04.011" endtime="20220713 19:05:04.589"/>
+</kw>
+<kw name="submit Login" library="android-res">
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${LOGIN-SINGIN-BUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220713 19:05:04.591" level="INFO">Clicking element 'id=chat21.android.demo:id/login'.</msg>
+<status status="PASS" starttime="20220713 19:05:04.589" endtime="20220713 19:05:05.147"/>
+</kw>
+<status status="PASS" starttime="20220713 19:05:04.589" endtime="20220713 19:05:05.147"/>
+</kw>
+<kw name="Verify Login Is Successful" library="android-res">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${MAIN-HOME-TAB}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220713 19:05:05.147" endtime="20220713 19:05:08.040"/>
+</kw>
+<status status="PASS" starttime="20220713 19:05:05.147" endtime="20220713 19:05:08.040"/>
+</kw>
+<status status="PASS" starttime="20220713 19:05:02.954" endtime="20220713 19:05:08.040"/>
+</kw>
+<status status="PASS" starttime="20220713 19:04:19.970" endtime="20220713 19:05:08.041"/>
+</test>
+<status status="PASS" starttime="20220713 19:04:19.678" endtime="20220713 19:05:08.044"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220713 19:04:26.086" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000017A6B3AD2D0&gt;: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente')': /wd/hub/session</msg>
+<msg timestamp="20220713 19:04:30.156" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000017A6B3AD5A0&gt;: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente')': /wd/hub/session</msg>
+</errors>
+</robot>
