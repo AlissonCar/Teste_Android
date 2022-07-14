@@ -1,5 +1,7 @@
 *** Variables ***
 #EMAIL FAKE, COM SENHA ALEATORIA
 
-${EMAIL}      alissucarvalho@gmail.com
-${USERPASSWORD}   36262914
+${EMAIL}      email
+${USERPASSWORD}   senha 
+
+#criar uma conta com senha e email no chat21
